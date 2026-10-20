@@ -60,7 +60,7 @@ namespace MassageSalon.Pages
                     Password = pass,
                     Email = email == "" ? null : email,
                     Phone = phone,
-                    RoleID = 1
+                    RoleID = 3
                 };
 
                 App.Context.Users.Add(newUser);
