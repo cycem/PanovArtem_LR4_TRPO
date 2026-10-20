@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bc5279317afc44378fd2f66c813cee16" Name="Diagram1">
+        <EntityTypeShape EntityType="MassageSalonModel.Appointments" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MassageSalonModel.Masseurs" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MassageSalonModel.Payments" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MassageSalonModel.Roles" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MassageSalonModel.Rooms" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MassageSalonModel.Services" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MassageSalonModel.Users" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="MassageSalonModel.FK__Appointme__Masse__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="MassageSalonModel.FK__Appointme__RoomI__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="MassageSalonModel.FK__Appointme__Servi__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="MassageSalonModel.FK__Appointme__UserI__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="MassageSalonModel.FK__Payments__Appoin__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="MassageSalonModel.FK__Users__RoleID__3C69FB99" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
