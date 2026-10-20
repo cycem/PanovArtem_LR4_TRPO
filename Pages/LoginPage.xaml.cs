@@ -49,7 +49,8 @@ namespace MassageSalon.Pages
 
             App.CurrentUser = user;
 
-            if (user.roleID == 2)
+
+            if (user.RoleID == 2)
                 NavigationService.Navigate(new AdminPage());
             else
                 NavigationService.Navigate(new MainPage());
