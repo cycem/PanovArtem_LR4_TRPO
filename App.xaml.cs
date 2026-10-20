@@ -5,16 +5,16 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using WpfApp1.Entities;
+using MassageSalon.Entities;
 
-namespace MassageSlon
+namespace MassageSalon
 {
     /// <summary>
     /// Логика взаимодействия для App.xaml
     /// </summary>
     public partial class App : Application
     {
-        public static MassageSalonEntities Context { get; } = new MassageSalonEntities();
-        public static Users CurrentUser = null;
+        public static Entities.MassageSalonEntities1 Context { get; } = new MassageSalonEntities1();
+        public static Entities.Users CurrentUser = null;
     }
 }

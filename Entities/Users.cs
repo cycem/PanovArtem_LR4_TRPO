@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfApp1.Entities
+namespace MassageSalon.Entities
 {
     using System;
     using System.Collections.Generic;

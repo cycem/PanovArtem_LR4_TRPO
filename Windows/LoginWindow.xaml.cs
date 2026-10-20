@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WpfApp1.Windows
+namespace MassageSalon.Windows
 {
     /// <summary>
     /// Логика взаимодействия для LoginWindow.xaml

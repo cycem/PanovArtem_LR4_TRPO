@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MassageSlon.Properties
+namespace MassageSalon.Properties
 {
 
 

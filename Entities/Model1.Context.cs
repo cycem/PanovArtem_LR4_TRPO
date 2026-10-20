@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfApp1.Entities
+namespace MassageSalon.Entities
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MassageSalonEntities : DbContext
+    public partial class MassageSalonEntities1 : DbContext
     {
-        public MassageSalonEntities()
-            : base("name=MassageSalonEntities")
+        public MassageSalonEntities1()
+            : base("name=MassageSalonEntities1")
         {
         }
     
