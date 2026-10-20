@@ -5,19 +5,19 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="cfe88adf72614873a8c2b4723dd3cc31" Name="Diagram1">
-        <EntityTypeShape EntityType="MassageSalonModel.Appointments" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="MassageSalonModel.Masseurs" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MassageSalonModel.Payments" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MassageSalonModel.Roles" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MassageSalonModel.Rooms" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MassageSalonModel.Services" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MassageSalonModel.Users" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <AssociationConnector Association="MassageSalonModel.FK__Appointme__Masse__4BAC3F29" ManuallyRouted="false" />
-        <AssociationConnector Association="MassageSalonModel.FK__Appointme__RoomI__4CA06362" ManuallyRouted="false" />
-        <AssociationConnector Association="MassageSalonModel.FK__Appointme__Servi__4D94879B" ManuallyRouted="false" />
-        <AssociationConnector Association="MassageSalonModel.FK__Appointme__UserI__4E88ABD4" ManuallyRouted="false" />
-        <AssociationConnector Association="MassageSalonModel.FK__Payments__Appoin__4F7CD00D" ManuallyRouted="false" />
-        <AssociationConnector Association="MassageSalonModel.FK__Users__RoleID__5070F446" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MassageSalonModel.Appointments" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="MassageSalonModel.Masseurs" Width="1.5" PointX="3" PointY="7.75" />
+        <EntityTypeShape EntityType="MassageSalonModel.Payments" Width="1.5" PointX="7.5" PointY="1.625" />
+        <EntityTypeShape EntityType="MassageSalonModel.Roles" Width="1.5" PointX="0.75" PointY="1.875" />
+        <EntityTypeShape EntityType="MassageSalonModel.Rooms" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="MassageSalonModel.Services" Width="1.5" PointX="3" PointY="10.5" />
+        <EntityTypeShape EntityType="MassageSalonModel.Users" Width="1.5" PointX="3" PointY="1.25" />
+        <AssociationConnector Association="MassageSalonModel.FK__Appointme__Masse__4AB81AF0" />
+        <AssociationConnector Association="MassageSalonModel.FK__Appointme__RoomI__4BAC3F29" />
+        <AssociationConnector Association="MassageSalonModel.FK__Appointme__Servi__4CA06362" />
+        <AssociationConnector Association="MassageSalonModel.FK__Appointme__UserI__4D94879B" />
+        <AssociationConnector Association="MassageSalonModel.FK__Payments__Appoin__4E88ABD4" />
+        <AssociationConnector Association="MassageSalonModel.FK__Users__RoleID__4F7CD00D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

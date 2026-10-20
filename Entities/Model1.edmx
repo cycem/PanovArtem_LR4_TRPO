@@ -72,7 +72,7 @@
           <Property Name="Email" Type="nvarchar" MaxLength="100" />
           <Property Name="RoleID" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Appointme__Masse__38996AB5">
+        <Association Name="FK__Appointme__Masse__4AB81AF0">
           <End Role="Masseurs" Type="Self.Masseurs" Multiplicity="1" />
           <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -84,7 +84,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Appointme__RoomI__398D8EEE">
+        <Association Name="FK__Appointme__RoomI__4BAC3F29">
           <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
           <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -96,7 +96,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Appointme__Servi__3A81B327">
+        <Association Name="FK__Appointme__Servi__4CA06362">
           <End Role="Services" Type="Self.Services" Multiplicity="1" />
           <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -108,7 +108,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Appointme__UserI__3B75D760">
+        <Association Name="FK__Appointme__UserI__4D94879B">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -120,7 +120,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Payments__Appoin__3C69FB99">
+        <Association Name="FK__Payments__Appoin__4E88ABD4">
           <End Role="Appointments" Type="Self.Appointments" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -134,7 +134,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Users__RoleID__3D5E1FD2">
+        <Association Name="FK__Users__RoleID__4F7CD00D">
           <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -154,27 +154,27 @@
           <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Appointme__Masse__38996AB5" Association="Self.FK__Appointme__Masse__38996AB5">
+          <AssociationSet Name="FK__Appointme__Masse__4AB81AF0" Association="Self.FK__Appointme__Masse__4AB81AF0">
             <End Role="Masseurs" EntitySet="Masseurs" />
             <End Role="Appointments" EntitySet="Appointments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Appointme__RoomI__398D8EEE" Association="Self.FK__Appointme__RoomI__398D8EEE">
+          <AssociationSet Name="FK__Appointme__RoomI__4BAC3F29" Association="Self.FK__Appointme__RoomI__4BAC3F29">
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Appointments" EntitySet="Appointments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Appointme__Servi__3A81B327" Association="Self.FK__Appointme__Servi__3A81B327">
+          <AssociationSet Name="FK__Appointme__Servi__4CA06362" Association="Self.FK__Appointme__Servi__4CA06362">
             <End Role="Services" EntitySet="Services" />
             <End Role="Appointments" EntitySet="Appointments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Appointme__UserI__3B75D760" Association="Self.FK__Appointme__UserI__3B75D760">
+          <AssociationSet Name="FK__Appointme__UserI__4D94879B" Association="Self.FK__Appointme__UserI__4D94879B">
             <End Role="Users" EntitySet="Users" />
             <End Role="Appointments" EntitySet="Appointments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Payments__Appoin__3C69FB99" Association="Self.FK__Payments__Appoin__3C69FB99">
+          <AssociationSet Name="FK__Payments__Appoin__4E88ABD4" Association="Self.FK__Payments__Appoin__4E88ABD4">
             <End Role="Appointments" EntitySet="Appointments" />
             <End Role="Payments" EntitySet="Payments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Users__RoleID__3D5E1FD2" Association="Self.FK__Users__RoleID__3D5E1FD2">
+          <AssociationSet Name="FK__Users__RoleID__4F7CD00D" Association="Self.FK__Users__RoleID__4F7CD00D">
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
@@ -183,6 +183,39 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MassageSalonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MassageSalonEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Appointments" EntityType="MassageSalonModel.Appointments" />
+          <EntitySet Name="Masseurs" EntityType="MassageSalonModel.Masseurs" />
+          <EntitySet Name="Payments" EntityType="MassageSalonModel.Payments" />
+          <EntitySet Name="Roles" EntityType="MassageSalonModel.Roles" />
+          <EntitySet Name="Rooms" EntityType="MassageSalonModel.Rooms" />
+          <EntitySet Name="Services" EntityType="MassageSalonModel.Services" />
+          <EntitySet Name="Users" EntityType="MassageSalonModel.Users" />
+          <AssociationSet Name="FK__Appointme__Masse__4AB81AF0" Association="MassageSalonModel.FK__Appointme__Masse__4AB81AF0">
+            <End Role="Masseurs" EntitySet="Masseurs" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Appointme__RoomI__4BAC3F29" Association="MassageSalonModel.FK__Appointme__RoomI__4BAC3F29">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Appointme__Servi__4CA06362" Association="MassageSalonModel.FK__Appointme__Servi__4CA06362">
+            <End Role="Services" EntitySet="Services" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Appointme__UserI__4D94879B" Association="MassageSalonModel.FK__Appointme__UserI__4D94879B">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Payments__Appoin__4E88ABD4" Association="MassageSalonModel.FK__Payments__Appoin__4E88ABD4">
+            <End Role="Appointments" EntitySet="Appointments" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__RoleID__4F7CD00D" Association="MassageSalonModel.FK__Users__RoleID__4F7CD00D">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Appointments">
           <Key>
             <PropertyRef Name="AppointmentID" />
@@ -193,22 +226,22 @@
           <Property Name="ServiceID" Type="Int32" Nullable="false" />
           <Property Name="RoomID" Type="Int32" Nullable="false" />
           <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Masseurs" Relationship="Self.FK__Appointme__Masse__4BAC3F29" FromRole="Appointments" ToRole="Masseurs" />
-          <NavigationProperty Name="Rooms" Relationship="Self.FK__Appointme__RoomI__4CA06362" FromRole="Appointments" ToRole="Rooms" />
-          <NavigationProperty Name="Services" Relationship="Self.FK__Appointme__Servi__4D94879B" FromRole="Appointments" ToRole="Services" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Appointme__UserI__4E88ABD4" FromRole="Appointments" ToRole="Users" />
-          <NavigationProperty Name="Payments" Relationship="Self.FK__Payments__Appoin__4F7CD00D" FromRole="Appointments" ToRole="Payments" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Masseurs" Relationship="MassageSalonModel.FK__Appointme__Masse__4AB81AF0" FromRole="Appointments" ToRole="Masseurs" />
+          <NavigationProperty Name="Rooms" Relationship="MassageSalonModel.FK__Appointme__RoomI__4BAC3F29" FromRole="Appointments" ToRole="Rooms" />
+          <NavigationProperty Name="Services" Relationship="MassageSalonModel.FK__Appointme__Servi__4CA06362" FromRole="Appointments" ToRole="Services" />
+          <NavigationProperty Name="Users" Relationship="MassageSalonModel.FK__Appointme__UserI__4D94879B" FromRole="Appointments" ToRole="Users" />
+          <NavigationProperty Name="Payments" Relationship="MassageSalonModel.FK__Payments__Appoin__4E88ABD4" FromRole="Appointments" ToRole="Payments" />
         </EntityType>
         <EntityType Name="Masseurs">
           <Key>
             <PropertyRef Name="MasseurID" />
           </Key>
           <Property Name="MasseurID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Specialization" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Masse__4BAC3F29" FromRole="Masseurs" ToRole="Appointments" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Specialization" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Appointments" Relationship="MassageSalonModel.FK__Appointme__Masse__4AB81AF0" FromRole="Masseurs" ToRole="Appointments" />
         </EntityType>
         <EntityType Name="Payments">
           <Key>
@@ -216,55 +249,55 @@
           </Key>
           <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AppointmentID" Type="Int32" Nullable="false" />
-          <Property Name="Amount" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
           <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="7" />
-          <Property Name="Method" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Appointments" Relationship="Self.FK__Payments__Appoin__4F7CD00D" FromRole="Payments" ToRole="Appointments" />
+          <Property Name="Method" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Appointments" Relationship="MassageSalonModel.FK__Payments__Appoin__4E88ABD4" FromRole="Payments" ToRole="Appointments" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
             <PropertyRef Name="RoleID" />
           </Key>
           <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Users" Relationship="Self.FK__Users__RoleID__5070F446" FromRole="Roles" ToRole="Users" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="MassageSalonModel.FK__Users__RoleID__4F7CD00D" FromRole="Roles" ToRole="Users" />
         </EntityType>
         <EntityType Name="Rooms">
           <Key>
             <PropertyRef Name="RoomID" />
           </Key>
           <Property Name="RoomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RoomName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="RoomType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__RoomI__4CA06362" FromRole="Rooms" ToRole="Appointments" />
+          <Property Name="RoomName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoomType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Appointments" Relationship="MassageSalonModel.FK__Appointme__RoomI__4BAC3F29" FromRole="Rooms" ToRole="Appointments" />
         </EntityType>
         <EntityType Name="Services">
           <Key>
             <PropertyRef Name="ServiceID" />
           </Key>
           <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ServiceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="DurationMin" Type="Int32" Nullable="false" />
-          <Property Name="Price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
-          <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Servi__4D94879B" FromRole="Services" ToRole="Appointments" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <NavigationProperty Name="Appointments" Relationship="MassageSalonModel.FK__Appointme__Servi__4CA06362" FromRole="Services" ToRole="Appointments" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
           <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="FullName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="RoleID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__UserI__4E88ABD4" FromRole="Users" ToRole="Appointments" />
-          <NavigationProperty Name="Roles" Relationship="Self.FK__Users__RoleID__5070F446" FromRole="Users" ToRole="Roles" />
+          <NavigationProperty Name="Appointments" Relationship="MassageSalonModel.FK__Appointme__UserI__4D94879B" FromRole="Users" ToRole="Appointments" />
+          <NavigationProperty Name="Roles" Relationship="MassageSalonModel.FK__Users__RoleID__4F7CD00D" FromRole="Users" ToRole="Roles" />
         </EntityType>
-        <Association Name="FK__Appointme__Masse__4BAC3F29">
-          <End Role="Masseurs" Type="Self.Masseurs" Multiplicity="1" />
-          <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+        <Association Name="FK__Appointme__Masse__4AB81AF0">
+          <End Type="MassageSalonModel.Masseurs" Role="Masseurs" Multiplicity="1" />
+          <End Type="MassageSalonModel.Appointments" Role="Appointments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Masseurs">
               <PropertyRef Name="MasseurID" />
@@ -274,9 +307,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Appointme__RoomI__4CA06362">
-          <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
-          <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+        <Association Name="FK__Appointme__RoomI__4BAC3F29">
+          <End Type="MassageSalonModel.Rooms" Role="Rooms" Multiplicity="1" />
+          <End Type="MassageSalonModel.Appointments" Role="Appointments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rooms">
               <PropertyRef Name="RoomID" />
@@ -286,9 +319,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Appointme__Servi__4D94879B">
-          <End Role="Services" Type="Self.Services" Multiplicity="1" />
-          <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+        <Association Name="FK__Appointme__Servi__4CA06362">
+          <End Type="MassageSalonModel.Services" Role="Services" Multiplicity="1" />
+          <End Type="MassageSalonModel.Appointments" Role="Appointments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Services">
               <PropertyRef Name="ServiceID" />
@@ -298,9 +331,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Appointme__UserI__4E88ABD4">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
-          <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+        <Association Name="FK__Appointme__UserI__4D94879B">
+          <End Type="MassageSalonModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="MassageSalonModel.Appointments" Role="Appointments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
               <PropertyRef Name="UserID" />
@@ -310,11 +343,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Payments__Appoin__4F7CD00D">
-          <End Role="Appointments" Type="Self.Appointments" Multiplicity="1">
+        <Association Name="FK__Payments__Appoin__4E88ABD4">
+          <End Type="MassageSalonModel.Appointments" Role="Appointments" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <End Type="MassageSalonModel.Payments" Role="Payments" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Appointments">
               <PropertyRef Name="AppointmentID" />
@@ -324,9 +357,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Users__RoleID__5070F446">
-          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
-          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+        <Association Name="FK__Users__RoleID__4F7CD00D">
+          <End Type="MassageSalonModel.Roles" Role="Roles" Multiplicity="1" />
+          <End Type="MassageSalonModel.Users" Role="Users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Roles">
               <PropertyRef Name="RoleID" />
@@ -336,39 +369,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MassageSalonEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Appointments" EntityType="Self.Appointments" />
-          <EntitySet Name="Masseurs" EntityType="Self.Masseurs" />
-          <EntitySet Name="Payments" EntityType="Self.Payments" />
-          <EntitySet Name="Roles" EntityType="Self.Roles" />
-          <EntitySet Name="Rooms" EntityType="Self.Rooms" />
-          <EntitySet Name="Services" EntityType="Self.Services" />
-          <EntitySet Name="Users" EntityType="Self.Users" />
-          <AssociationSet Name="FK__Appointme__Masse__4BAC3F29" Association="Self.FK__Appointme__Masse__4BAC3F29">
-            <End Role="Masseurs" EntitySet="Masseurs" />
-            <End Role="Appointments" EntitySet="Appointments" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Appointme__RoomI__4CA06362" Association="Self.FK__Appointme__RoomI__4CA06362">
-            <End Role="Rooms" EntitySet="Rooms" />
-            <End Role="Appointments" EntitySet="Appointments" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Appointme__Servi__4D94879B" Association="Self.FK__Appointme__Servi__4D94879B">
-            <End Role="Services" EntitySet="Services" />
-            <End Role="Appointments" EntitySet="Appointments" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Appointme__UserI__4E88ABD4" Association="Self.FK__Appointme__UserI__4E88ABD4">
-            <End Role="Users" EntitySet="Users" />
-            <End Role="Appointments" EntitySet="Appointments" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Payments__Appoin__4F7CD00D" Association="Self.FK__Payments__Appoin__4F7CD00D">
-            <End Role="Appointments" EntitySet="Appointments" />
-            <End Role="Payments" EntitySet="Payments" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Users__RoleID__5070F446" Association="Self.FK__Users__RoleID__5070F446">
-            <End Role="Roles" EntitySet="Roles" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -378,74 +378,74 @@
           <EntitySetMapping Name="Appointments">
             <EntityTypeMapping TypeName="MassageSalonModel.Appointments">
               <MappingFragment StoreEntitySet="Appointments">
-                <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="MasseurID" ColumnName="MasseurID" />
-                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
-                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
-                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="MasseurID" ColumnName="MasseurID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Masseurs">
             <EntityTypeMapping TypeName="MassageSalonModel.Masseurs">
               <MappingFragment StoreEntitySet="Masseurs">
-                <ScalarProperty Name="MasseurID" ColumnName="MasseurID" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="Specialization" ColumnName="Specialization" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="MasseurID" ColumnName="MasseurID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Payments">
             <EntityTypeMapping TypeName="MassageSalonModel.Payments">
               <MappingFragment StoreEntitySet="Payments">
-                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
-                <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
                 <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Roles">
             <EntityTypeMapping TypeName="MassageSalonModel.Roles">
               <MappingFragment StoreEntitySet="Roles">
-                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Rooms">
             <EntityTypeMapping TypeName="MassageSalonModel.Rooms">
               <MappingFragment StoreEntitySet="Rooms">
-                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
-                <ScalarProperty Name="RoomName" ColumnName="RoomName" />
                 <ScalarProperty Name="RoomType" ColumnName="RoomType" />
+                <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+                <ScalarProperty Name="RoomID" ColumnName="RoomID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Services">
             <EntityTypeMapping TypeName="MassageSalonModel.Services">
               <MappingFragment StoreEntitySet="Services">
-                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
-                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
-                <ScalarProperty Name="DurationMin" ColumnName="DurationMin" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="DurationMin" ColumnName="DurationMin" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="MassageSalonModel.Users">
               <MappingFragment StoreEntitySet="Users">
-                <ScalarProperty Name="UserID" ColumnName="UserID" />
-                <ScalarProperty Name="Login" ColumnName="Login" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="FullName" ColumnName="FullName" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

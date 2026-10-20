@@ -6,9 +6,77 @@
       xmlns:local="clr-namespace:MassageSalon.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MainPage">
+      Title="Главная" Loaded="Page_Loaded">
 
-    <Grid>
-        
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="0 0 0 10">
+            <Button DockPanel.Dock="Right" Content="Выйти" Width="80" Click="BtnLogout_Click"/>
+            <TextBlock x:Name="TbUser" FontSize="16" VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <DataGrid Grid.Row="0" x:Name="DgServices" AutoGenerateColumns="False"
+                      IsReadOnly="True" CanUserAddRows="False" SelectionMode="Single">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Массаж" Binding="{Binding ServiceName}" Width="*"/>
+                    <DataGridTextColumn Header="Длительность, мин" Binding="{Binding DurationMin}" Width="150"/>
+                    <DataGridTextColumn Header="Цена, руб." Binding="{Binding Price, StringFormat={}{0:N2}}" Width="120"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Grid.Row="1" Margin="0 10 0 0">
+                <TextBlock Text="Выберите массаж в таблице, затем заполните данные для записи:"/>
+                <WrapPanel Margin="0 5 0 0">
+                    <StackPanel Width="200" Margin="0 0 10 5">
+                        <TextBlock Text="Массажист:"/>
+                        <ComboBox x:Name="CbMasseur" DisplayMemberPath="FullName" SelectedValuePath="MasseurID"/>
+                    </StackPanel>
+                    <StackPanel Width="150" Margin="0 0 10 5">
+                        <TextBlock Text="Кабинет:"/>
+                        <ComboBox x:Name="CbRoom" DisplayMemberPath="RoomName" SelectedValuePath="RoomID"/>
+                    </StackPanel>
+                    <StackPanel Width="130" Margin="0 0 10 5">
+                        <TextBlock Text="Дата:"/>
+                        <DatePicker x:Name="DpDate"/>
+                    </StackPanel>
+                    <StackPanel Width="80" Margin="0 0 10 5">
+                        <TextBlock Text="Время (ЧЧ:мм):"/>
+                        <TextBox x:Name="TbTime" Text="10:00" Height="22"/>
+                    </StackPanel>
+                </WrapPanel>
+                <Button Content="Записаться" Width="120" Height="28" HorizontalAlignment="Left" Click="BtnBook_Click"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0 15 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Мои бронирования" FontWeight="Bold" Margin="0 0 0 5"/>
+            <DataGrid Grid.Row="1" x:Name="DgMyAppointments" AutoGenerateColumns="False"
+                      IsReadOnly="True" CanUserAddRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№" Binding="{Binding AppointmentID}" Width="50"/>
+                    <DataGridTextColumn Header="Массаж" Binding="{Binding Services.ServiceName}" Width="*"/>
+                    <DataGridTextColumn Header="Массажист" Binding="{Binding Masseurs.FullName}" Width="*"/>
+                    <DataGridTextColumn Header="Кабинет" Binding="{Binding Rooms.RoomName}" Width="100"/>
+                    <DataGridTextColumn Header="Дата и время" Binding="{Binding StartTime, StringFormat={}{0:dd.MM.yyyy HH:mm}}" Width="130"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="110"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
 </Page>

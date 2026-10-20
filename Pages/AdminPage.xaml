@@ -6,9 +6,62 @@
       xmlns:local="clr-namespace:MassageSalon.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminPage">
+      Title="Администратор" Loaded="Page_Loaded">
 
-    <Grid>
-        
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="0 0 0 10">
+            <Button DockPanel.Dock="Right" Content="Выйти" Width="80" Click="BtnLogout_Click"/>
+            <TextBlock x:Name="TbUser" FontSize="16" VerticalAlignment="Center"/>
+        </DockPanel>
+
+        <DataGrid Grid.Row="1" x:Name="DgAppointments" AutoGenerateColumns="False"
+                  IsReadOnly="True" CanUserAddRows="False" SelectionMode="Single"
+                  SelectionChanged="DgAppointments_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding AppointmentID}" Width="50"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Users.FullName}" Width="*"/>
+                <DataGridTextColumn Header="Массаж" Binding="{Binding Services.ServiceName}" Width="*"/>
+                <DataGridTextColumn Header="Массажист" Binding="{Binding Masseurs.FullName}" Width="*"/>
+                <DataGridTextColumn Header="Кабинет" Binding="{Binding Rooms.RoomName}" Width="100"/>
+                <DataGridTextColumn Header="Дата и время" Binding="{Binding StartTime, StringFormat={}{0:dd.MM.yyyy HH:mm}}" Width="130"/>
+                <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="110"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Margin="0 10 0 0">
+            <WrapPanel>
+                <StackPanel Width="180" Margin="0 0 10 5">
+                    <TextBlock Text="Клиент:"/>
+                    <ComboBox x:Name="CbUser" DisplayMemberPath="FullName" SelectedValuePath="UserID"/>
+                </StackPanel>
+                <StackPanel Width="180" Margin="0 0 10 5">
+                    <TextBlock Text="Массаж:"/>
+                    <ComboBox x:Name="CbService" DisplayMemberPath="ServiceName" SelectedValuePath="ServiceID"/>
+                </StackPanel>
+                <StackPanel Width="180" Margin="0 0 10 5">
+                    <TextBlock Text="Массажист:"/>
+                    <ComboBox x:Name="CbMasseur" DisplayMemberPath="FullName" SelectedValuePath="MasseurID"/>
+                </StackPanel>
+                <StackPanel Width="120" Margin="0 0 10 5">
+                    <TextBlock Text="Кабинет:"/>
+                    <ComboBox x:Name="CbRoom" DisplayMemberPath="RoomName" SelectedValuePath="RoomID"/>
+                </StackPanel>
+                <StackPanel Width="130" Margin="0 0 10 5">
+                    <TextBlock Text="Статус:"/>
+                    <ComboBox x:Name="CbStatus"/>
+                </StackPanel>
+            </WrapPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Добавить" Width="110" Height="28" Margin="0 0 10 0" Click="BtnAdd_Click"/>
+                <Button Content="Редактировать" Width="110" Height="28" Margin="0 0 10 0" Click="BtnEdit_Click"/>
+                <Button Content="Удалить" Width="110" Height="28" Click="BtnDelete_Click"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>

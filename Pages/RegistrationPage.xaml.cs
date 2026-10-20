@@ -1,16 +1,11 @@
-﻿
-using Microsoft.Win32;
+﻿using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using MassageSalon.Entities;
 
-
 namespace MassageSalon.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для RegistrationPage.xaml
-    /// </summary>
     public partial class RegistrationPage : Page
     {
         public RegistrationPage()
@@ -18,54 +13,72 @@ namespace MassageSalon.Pages
             InitializeComponent();
         }
 
-     
-
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
-            string name = tbName.Text.Trim();
-            string surname = tbSurName.Text.Trim();
-            string fath = tbFath.Text.Trim();
-            string login = tbLogin.Text.Trim();
-            string pass = pbPassword.Password;
-
-            if (name == "" || surname == "" || fath == "" || login == "" || pass == "")
+            try
             {
-                MessageBox.Show("Не все поля заполнены.");
-                return;
+                string name = tbName.Text.Trim();
+                string surname = tbSurName.Text.Trim();
+                string fath = tbFath.Text.Trim();
+                string login = tbLogin.Text.Trim();
+                string pass = pbPassword.Password;
+                string email = tbEmail.Text.Trim();
+                string phone = tbPhone.Text.Trim();
+
+                if (name == "" || surname == "" || fath == "" || login == "" || pass == "" || phone == "")
+                {
+                    MessageBox.Show("Не все поля заполнены.", "Ошибка",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (pass.Length < 8)
+                {
+                    MessageBox.Show("Пароль должен быть не короче 8 символов.", "Ошибка",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (email != "" && !email.Contains("@"))
+                {
+                    MessageBox.Show("Введите корректную почту.", "Ошибка",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                if (App.Context.Users.Any(u => u.Login == login))
+                {
+                    MessageBox.Show("Пользователь с таким логином уже существует!", "Ошибка",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                Users newUser = new Users
+                {
+                    FullName = surname + " " + name + " " + fath,
+                    Login = login,
+                    Password = pass,
+                    Email = email == "" ? null : email,
+                    Phone = phone,
+                    RoleID = 1
+                };
+
+                App.Context.Users.Add(newUser);
+                App.Context.SaveChanges();
+
+                MessageBox.Show("Регистрация прошла успешно.");
+                NavigationService.Navigate(new LoginPage());
             }
-            
-            if (pass.Length < 8)
+            catch (Exception ex)
             {
-                MessageBox.Show("Пароль должен быть не короче 8 символов.");
-                return;
+                MessageBox.Show("Ошибка при регистрации: " + ex.Message, "Ошибка",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
-            if (App.Context.Users.Any(u => u.Login == login))
-            {
-                MessageBox.Show("Пользователь с таким логином уже существует!");
-                return;
-            }
-
-            Users newUser = new Users
-            {
-                FullName = $"{surname} {name} {fath}",
-                Login = login,
-                Password = pass,
-                RoleID = 1
-            };
-
-            App.Context.Users.Add(newUser);
-            App.Context.SaveChanges();
-
-            MessageBox.Show("Регистрация прошла успешно.");
-            NavigationService.Navigate(new LoginPage());
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new LoginPage());
         }
-
-        
     }
 }
