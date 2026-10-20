@@ -9,6 +9,19 @@
       Title="LoginPage">
 
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Width="60" Text="Логин:" VerticalAlignment="Center"/>
+                <TextBox Name="TBoxLogin" Width="200" Height="25"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Width="60" Text="Пароль:" VerticalAlignment="Center"/>
+                <PasswordBox Name="PBoxPassword" Width="200" Height="25"/>
+            </StackPanel>
+            <Button Name="BtnLogin" Click="BtnLogin_Click" Content="Войти"
+                    Width="100" Margin="5"/>
+            <Button Name="BtnRegistration" Click="BtnRegistration_Click"
+                    Content="Создать учетную запись" Width="168" Margin="5"/>
+        </StackPanel>
     </Grid>
 </Page>

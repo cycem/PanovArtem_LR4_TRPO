@@ -25,7 +25,7 @@
             <TextBlock Text="Пароль (не менее 8 символов):"/>
             <PasswordBox x:Name="pbPassword" Height="22" Margin="0 0 0 8"/>
 
-            <TextBlock Text="Почта"/>
+            <TextBlock Text="Почта"/> 
             <TextBox x:Name="tbEmail" Height="22" Margin="0 0 0 8"/>
             
             <TextBlock Text="Номер телефона"/>
